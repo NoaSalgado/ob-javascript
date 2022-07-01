@@ -9,3 +9,5 @@ const mi_array = [
     publicacion: "1965",
   },
 ];
+
+console.log(mi_array);
