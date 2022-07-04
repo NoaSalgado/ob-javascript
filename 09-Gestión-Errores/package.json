@@ -1,0 +1,14 @@
+{
+  "name": "errores",
+  "version": "1.0.0",
+  "description": "ejercicio 9",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "winston": "^3.8.1"
+  }
+}
