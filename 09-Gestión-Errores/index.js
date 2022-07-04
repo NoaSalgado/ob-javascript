@@ -1,7 +1,7 @@
 const winston = require("winston");
 
 const logger = winston.createLogger({
-  level: "info",
+  level: "error",
   format: winston.format.json(),
   defaultMeta: { service: "user-service" },
   transports: [
@@ -14,12 +14,12 @@ const logger = winston.createLogger({
   ],
 });
 
-function error(mensaje) {
-  throw new Error(mensaje);
+function error() {
+  throw new Error("Mensaje personalizado");
 }
 
 try {
-  error("Error personalizado");
+  error();
 } catch (e) {
-  logger.error(e);
+  logger.log(e);
 }
