@@ -16,12 +16,17 @@
     - Observa cómo la cookie sigue manteniendo el objeto que has almacenado antes, aunque ya está caducado*/
 const nombre = "Noa";
 const apellido = "Salgado";
-const me = {
-  nombre: nombre,
-  apellido: apellido,
+const yo = {
+  nombre,
+  apellido,
 };
+
 let fecha = new Date();
 
-localStorage.setItem("miNombre", me);
-sessionStorage.setItem("miNombre", me);
-document.cookie("usuario=me; expires=fecha.getMinutes()+2");
+localStorage.setItem("miNombre", JSON.stringify(yo));
+sessionStorage.setItem("miNombre", JSON.stringify(yo));
+document.cookie(
+  `datos=${JSON.stringify(yo)};expires=${new Date(
+    fecha.getTime() + 2 * 600000
+  )}`
+);
